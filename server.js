@@ -10,17 +10,16 @@ const image = require('./controllers/image')
 const db = knex({
     client: 'pg',
     connection: {
-    host : 'postgresql-concave-38000',  //process.ENV.DATABASE_URL
-    // ssl: true,
+    host : 'postgresql-concave-38000',  
     user : '',
     password : '',
     database : 'smart-brain-db'
     }
-  });
+})
 
 const app = express()
 
-app.use(express.json());
+app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => res.send('It is running!'))
