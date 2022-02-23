@@ -4,6 +4,9 @@ const handleRegister = (req, res, db, bcrypt) => {
         return res.status(400).json('Incorrect Details: All fields must be filled in')
     }
     const hash = bcrypt.hashSync(password)
+
+    console.log(req.body)
+
     db.transaction(trx => {
         trx.insert({
             hash: hash,
