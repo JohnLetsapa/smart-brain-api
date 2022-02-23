@@ -11,7 +11,10 @@ const db = knex({
     client: 'pg',
     connection: {
       connectionString : 'process.ENV.DATABASE_URL',  //postgresql-concave-38000
-      ssl: true,
+      ssl: {
+        rejectUnauthorized: false
+      }
+      //  ssl: true,
     //   user : '',
     //   password : '',
     //   database : 'smart-brain-db'
