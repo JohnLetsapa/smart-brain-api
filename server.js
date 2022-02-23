@@ -22,7 +22,7 @@ const app = express()
 app.use(express.json());
 app.use(cors())
 
-
+app.get('/', (req, res) => res.send('It is running!'))
 app.post('https://salty-scrubland-21115.herokuapp.com/signin', (req, res) => signin.handleSignIn(req, res, db, bcrypt))  
 app.post('https://salty-scrubland-21115.herokuapp.com/register', (req,res) => register.handleRegister(req, res, db, bcrypt))
 app.get('https://salty-scrubland-21115.herokuapp.com/profile/:id', (req, res) => profile.handleProfile(req, res, db)) 
