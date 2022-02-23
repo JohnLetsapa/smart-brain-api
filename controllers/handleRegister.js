@@ -8,14 +8,16 @@ const handleRegister = (req, res, db, bcrypt) => {
     console.log(req.body, hash)
 
     db.transaction(trx => {
-        
+
         trx.insert({
+            console.log('Point 1 - check')
             hash: hash,
             email: email
         })
         .into('login')
         .returning('email')
         .then(loginEmail => {
+            console.log('Point 2 - check')
             return trx('users')
                     .returning('*')
                     .insert({
