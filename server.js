@@ -10,7 +10,7 @@ const image = require('./controllers/image')
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'process.ENV.DATABASE_URL',  //postgresql-concave-38000
+      connectionString : 'process.ENV.DATABASE_URL',  //postgresql-concave-38000
       SSL: true
     //   user : '',
     //   password : '',
